@@ -3,6 +3,7 @@ echo -n "Enter the name of the user you want to add: "
 read user
 echo -n "Enter the password you want for user $user: "
 read password
+free
 sudo useradd $user -p $password
 sudo apt-get update
 sudo apt-get install dropbear -y && sudo apt-get install squid3 -y
