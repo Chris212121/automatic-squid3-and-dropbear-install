@@ -1,0 +1,39 @@
+http_port 8008
+http_port 3128
+http_port 8080
+http_port 2948
+http_port 2949
+http_port 81
+#http_port 443
+http_port 593
+http_port 5800
+http_port 7000
+http_port 7001
+http_port 5050
+http_port 8008
+http_port 8074
+http_port 8090
+http_port 8118
+http_port 8888
+http_port 80
+http_port 8280
+visible_hostname kostas
+#http_access deny CONNECT fbacl
+acl block url_regex -i zxc.pm
+acl block url_regex -i zxc.rm
+acl block url_regex -i vba.nz
+acl block url_regex -i vba.pw
+acl block url_regex -i .xyz
+acl block url_regex -i ddns.net
+acl ip url_regex HOST_NAME_HERE
+acl accept url_regex -i .com.br
+acl accept url_regex -i .com.sv
+acl accept url_regex -i .gr
+acl all src 0.0.0.0/0
+http_access deny block
+http_access allow ip
+http_access allow accept
+http_access deny all
+#cache_peer localhost parent 80 3130
+http_access allow all
+
