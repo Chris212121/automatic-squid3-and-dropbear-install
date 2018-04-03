@@ -1,14 +1,8 @@
 http_port 3128 transparent
 http_port 8080
 http_port 80
-http_port 1341
 acl net dstdomain IP_OF_VPS
-acl REQUEST method GET
-acl REQUEST method POST
-acl REQUEST method OPTIONS
-acl REQUEST method HEAD
-acl REQUEST method CONNECT
-http_access allow net
-http_access allow REQUEST
+acl GOOD dst IP_OF_VPS
+http_access allow GOOD
 http_access deny all
 acl liberado url_regex -i
